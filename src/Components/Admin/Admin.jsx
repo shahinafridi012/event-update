@@ -28,7 +28,7 @@ const Admin = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get("http://localhost:5000/users");
+            const response = await axios.get("https://event-update-server.vercel.app/users");
             setUsers(response.data || []);
         } catch (err) {
             setError("Failed to fetch users. Please try again later.");
@@ -40,7 +40,7 @@ const Admin = () => {
     // Fetch event details from backend
     const fetchEventDetails = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/save-event-details");
+            const response = await axios.get("https://event-update-server.vercel.app/save-event-details");
             if (response.data) {
                 setEventDetails(response.data.eventDetails || {});
                 setHeadline(response.data.headline || "");
@@ -68,7 +68,7 @@ const Admin = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:5000/save-event-details", data, {
+            const response = await axios.post("https://event-update-server.vercel.app/save-event-details", data, {
                 headers: {
                     "Content-Type": "application/json",
                 },
