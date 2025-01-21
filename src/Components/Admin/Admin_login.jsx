@@ -15,7 +15,7 @@ const Admin_login = () => {
   
     try {
       console.log('Sending login request...');
-      const response = await fetch(https://event-update-server.vercel.app/api/admin-login', {
+      const response = await fetch('http://localhost:5000/api/admin-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -75,3 +75,4 @@ const Admin_login = () => {
 };
 
 export default Admin_login;
+
