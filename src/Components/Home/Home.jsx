@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchEventDetails = async () => {
     try {
-      const response = await fetch("https://event-update-server.vercel.app/save-event-details");
+      const response = await fetch("http://localhost:5000/save-event-details");
       const data = await response.json();
       if (response.ok) {
         setEventDetails(data); // Set event details data
@@ -60,7 +60,7 @@ const Home = () => {
     };
 
     try {
-      const response = await fetch("https://event-update-server.vercel.app/users", {
+      const response = await fetch("http://localhost:5000/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
